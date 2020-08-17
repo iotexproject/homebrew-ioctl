@@ -1,7 +1,7 @@
-# homebrew-ioctl
+# Homebrew-ioctl
 submit iotex ioctl tool to homebrew.
 
-# usage
+# Usage
 ```
 brew update
 brew upgrade
