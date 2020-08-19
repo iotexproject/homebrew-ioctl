@@ -1,10 +1,17 @@
-# Homebrew-ioctl
-submit iotex ioctl tool to homebrew.
+Homebrew-iotexproject
+==============
+Homebrew Tap for IoTex
 
-# Usage
+## Installation
+
 ```
-brew update
-brew upgrade
-brew tap RuneAkko/ioctl
+brew tap iotexproject/ioctl
+```
+
+### ioctl
+
+To install the latest 1.1 release:
+
+```
 brew install ioctl
 ```
