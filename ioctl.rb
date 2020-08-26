@@ -8,7 +8,7 @@
 #
 # Copyright (c) 2019 IoTeX Foundation
 #------------------------------------------------------------------------------
-class IotexCore < Formula
+class Ioctl < Formula
   desc "ioctl is a command line interface for interacting with the IoTeX blockchain."
   homepage "https://docs.iotex.io/developer/get-started/ioctl-install.html"
   url "https://github.com/iotexproject/iotex-core/archive/v1.1.1.tar.gz"
@@ -31,11 +31,11 @@ class IotexCore < Formula
     #
     # This test will fail and we won't accept that! For Homebrew/homebrew-core
     # this will need to be a test that verifies the functionality of the
-    # software. Run the test with `brew test iotex-core`. Options passed
+    # software. Run the test with `brew test ioctl`. Options passed
     # to `brew install` such as `--HEAD` also need to be provided to `brew test`.
     #
     # The installed folder is not in the path, so use the entire path to any
     # executables being tested: `system "#{bin}/program", "do", "something"`.
-    system "false"
+    system "ioctl", "config", "set", "endpoint", "api.iotex.one:443"
   end
 end
