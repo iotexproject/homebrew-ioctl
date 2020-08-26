@@ -8,18 +8,34 @@
 #
 # Copyright (c) 2019 IoTeX Foundation
 #------------------------------------------------------------------------------
-class Ioctl < Formula
+class IotexCore < Formula
   desc "ioctl is a command line interface for interacting with the IoTeX blockchain."
   homepage "https://docs.iotex.io/developer/get-started/ioctl-install.html"
-  url "https://github.com/iotexproject/iotex-core/releases/download/v1.1.0/ioctl-darwin-amd64"
-  sha256 "62e2b4a9ae609784dae9a23b59ce5cd3b601e5a26ab77ecb9c33d59c7949d9c4"
+  url "https://github.com/iotexproject/iotex-core/archive/v1.1.1.tar.gz"
+  sha256 "fcff5ce4231253ebbe04e0405a36a7b89fb2d6c1b30ab0b5deac6ac6f84f9f8b"
+  license "Apache-2.0"
 
-  # depends_on "cmake" => :build
+  depends_on "golang"
+  depends_on "make"
 
   def install
     # ENV.deparallelize  # if your formula fails when building in parallel
-    # system "cmake", ".", *std_cmake_args
-    bin.install "ioctl-darwin-amd64"
+    # Remove unrecognized options if warned by configure
+    ENV["GOPROXY"] = "https://goproxy.io"
+    system "make", "ioctl"
+    bin.install "bin/ioctl"
   end
-  
+
+  test do
+    # `test do` will create, run in and delete a temporary directory.
+    #
+    # This test will fail and we won't accept that! For Homebrew/homebrew-core
+    # this will need to be a test that verifies the functionality of the
+    # software. Run the test with `brew test iotex-core`. Options passed
+    # to `brew install` such as `--HEAD` also need to be provided to `brew test`.
+    #
+    # The installed folder is not in the path, so use the entire path to any
+    # executables being tested: `system "#{bin}/program", "do", "something"`.
+    system "false"
+  end
 end
