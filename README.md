@@ -7,7 +7,7 @@ Homebrew Tap for IoTex
 brew tap iotexproject/ioctl
 ```
 ### ioctl
-To install the latest 1.1 release:
+To install the latest verison at master branch:
 ```
 brew install ioctl
 ```
